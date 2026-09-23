@@ -12,9 +12,9 @@ COPY .mvn .mvn
 COPY pom.xml .
 COPY src src
 
-# Build the application and extract the Spring Boot jar contents
-RUN chmod +x mvnw && ./mvnw clean install -DskipTests
-RUN mkdir -p target/dependency && cd target/dependency && jar -xf ../*.jar
+# Build the Spring Boot application
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+
 
 # Stage 2: Run Spring Boot application
 FROM eclipse-temurin:8-jre
@@ -22,11 +22,12 @@ FROM eclipse-temurin:8-jre
 # Create a temporary volume used by Spring Boot
 VOLUME /tmp
 
-# Copy the extracted Spring Boot application from the build stage
-COPY --from=build /workspace/app/target/dependency/BOOT-INF/lib /app/lib
-COPY --from=build /workspace/app/target/dependency/META-INF /app/META-INF
-COPY --from=build /workspace/app/target/dependency/BOOT-INF/classes /app
+# Set the working directory for the runtime stage
+WORKDIR /app
+
+# Copy the built Spring Boot jar from the build stage
+COPY --from=build /workspace/app/target/*.jar app.jar
 
 # Expose the application port and start the Spring Boot application
 EXPOSE 8080
-ENTRYPOINT ["java", "-cp", "/app:/app/lib/*", "com.boilerplate.boilerplateapi.SpringBootBoilerplateApiApplication"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
