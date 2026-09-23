@@ -6,14 +6,14 @@ services:
     build:
       context: .
     environment:
-      - SPRING_PROFILES_ACTIVE=dev
-      - DB_URI=jdbc:mysql://host.docker.internal:3306/db_spring_boot_boilerplate_api?serverTimezone=UTC
-      - DB_USERNAME=root
-      - DB_PASSWORD=root
-      - JWK_KEYSTORE_PATH=classpath:keystore/demo-dev-jwk.jks
-      - JWK_KEYSTORE_PASS=demo-pass
-      - JWK_KEYSTORE_ALIAS=demo-alias
-      - EMAIL_USERNAME=DUMMY_EMAIL@EMAIL.COM
-      - EMAIL_PASSWORD=DUMMY_EMAIL_PASSWORD
+      SPRING_PROFILES_ACTIVE: dev
+      DB_URI: jdbc:mysql://host.docker.internal:3306/db_spring_boot_boilerplate_api?serverTimezone=UTC
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      JWK_KEYSTORE_PATH: classpath:keystore/demo-dev-jwk.jks
+      JWK_KEYSTORE_PASS: demo-pass
+      JWK_KEYSTORE_ALIAS: demo-alias
+      EMAIL_USERNAME: DUMMY_EMAIL@EMAIL.COM
+      EMAIL_PASSWORD: DUMMY_EMAIL_PASSWORD
     ports:
       - "8080:8080"
