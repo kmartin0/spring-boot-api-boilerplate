@@ -1,14 +1,13 @@
-version: "3"
 services:
-  spring-boot-boilerplate-api:
+  spring-boot-boilerplate-api-development:
     restart: always
-    image: spring-boot-boilerplate-api
-    container_name: spring-boot-boilerplate-api
+    image: spring-boot-boilerplate-api-development
+    container_name: spring-boot-boilerplate-api-development
     build:
       context: .
     environment:
       - SPRING_PROFILES_ACTIVE=dev
-      - DB_URI=jdbc:mysql://host.docker.internal:3306/spring-demo-api-db?serverTimezone=UTC
+      - DB_URI=jdbc:mysql://host.docker.internal:3306/db_spring_boot_boilerplate_api?serverTimezone=UTC
       - DB_USERNAME=root
       - DB_PASSWORD=root
       - JWK_KEYSTORE_PATH=classpath:keystore/demo-dev-jwk.jks
