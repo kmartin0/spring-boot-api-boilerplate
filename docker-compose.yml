@@ -1,8 +1,8 @@
 services:
-  spring-boot-boilerplate-api-development:
+  spring-boot-api-boilerplate-development:
     restart: always
-    image: spring-boot-boilerplate-api-development
-    container_name: spring-boot-boilerplate-api-development
+    image: spring-boot-api-boilerplate-development
+    container_name: spring-boot-api-boilerplate-development
     build:
       context: .
     environment:

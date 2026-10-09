@@ -8,11 +8,11 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.boilerplate</groupId> <!-- TODO: Refactor to your groupId -->
-    <artifactId>boilerplate-api</artifactId> <!-- TODO: Refactor to your artifactId -->
+    <groupId>nl.kmartin</groupId> <!-- TODO: Refactor to your groupId -->
+    <artifactId>spring-boot-api-boilerplate</artifactId> <!-- TODO: Refactor to your artifactId -->
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-boilerplate-api</name> <!-- TODO: Refactor to your name -->
-    <description>Base project for building a rest api using spring boot</description> <!-- TODO: Refactor to your description -->
+    <name>Spring Boot API Boilerplate</name> <!-- TODO: Refactor to your name -->
+    <description>Base project for building a REST API using Spring Boot</description> <!-- TODO: Refactor to your description -->
     <properties>
         <java.version>1.8</java.version>
         <oauth2.autoconfigure.version>2.4.2</oauth2.autoconfigure.version>
