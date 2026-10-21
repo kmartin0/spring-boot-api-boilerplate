@@ -4,6 +4,13 @@ Boilerplate project for building REST APIs with Spring Boot.
 
 The project includes common API functionality such as user management, OAuth 2 authentication, persistence, validation, localization, email support and global exception handling.
 
+## API documentation
+
+REST API documentation is available in the `docs` directory.
+
+- [Collection documentation](docs/collection.md) contains shared request and response models, authentication details and error formats.
+- Endpoint-specific documentation is stored alongside it in `docs`.
+
 ## Features
 
 - User registration and account management.
